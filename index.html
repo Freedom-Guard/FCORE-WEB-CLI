@@ -21,7 +21,23 @@
   </select>
   <input type="text" id="search" placeholder="Search logs">
   <button id="mode">Toggle Dark/Light</button>
+  <button id="settings-btn">Settings ⚙️</button>
 </header>
+
+<div id="error-message" class="error-message" style="display:none;">
+  <p>❌ Please run <strong>freedom-core</strong> before using this tool.</p>
+  <p>If you are using a different port, change it in <strong>Settings</strong>.</p>
+  <p>
+    Download: 
+    <a href="https://github.com/Freedom-Guard/Freedom-Core/releases/latest" target="_blank">freedom-core</a>
+  </p>
+</div>
+
+<div id="settings" class="settings" style="display:none;">
+  <label>Port: <input type="number" id="port" value="8087"></label>
+  <button id="save-settings">Save</button>
+</div>
+
 <pre id="log"></pre>
 <script src="app.js"></script>
 </body>
