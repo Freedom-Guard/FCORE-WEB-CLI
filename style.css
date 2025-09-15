@@ -36,7 +36,9 @@ header {
   border-radius: 0 0 16px 16px;
 }
 
-input, button, select {
+input,
+button,
+select {
   padding: 8px 14px;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
@@ -49,7 +51,8 @@ input, button, select {
   box-shadow: 0 0 8px rgba(0, 255, 153, 0.2);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   border-color: var(--accent-color);
   box-shadow: 0 0 12px var(--accent-color);
 }
@@ -60,14 +63,20 @@ button:hover {
   box-shadow: 0 0 16px var(--accent-color);
   transform: scale(1.05);
 }
+::-webkit-scrollbar {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00ff99;
+}
 
-#error-message, #settings {
-  background: rgba(0,0,0,0.6);
+#error-message,
+#settings {
+  background: rgba(0, 0, 0, 0.6);
   color: var(--text-color);
   padding: 16px;
   border-radius: 12px;
   margin: 10px;
-  backdrop-filter: blur(8px);
 }
 
 #log {
@@ -79,19 +88,71 @@ button:hover {
   border-radius: 16px;
   margin: 10px;
   box-shadow: inset 0 0 15px rgba(0, 255, 153, 0.3);
-  backdrop-filter: blur(10px);
 }
 
-.log-line { opacity: 0; animation: fadeIn 0.5s forwards; }
-.log-line .highlight { background-color: var(--highlight-color); color: var(--text-color); font-weight: bold; border-radius: 4px; padding: 0 2px; }
+.log-line {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+.log-line .highlight {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0 2px;
+}
 
-@keyframes fadeIn { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-.INFO { color: var(--accent-color); font-weight: 500; }
-.WARN { color: #ffff66; font-weight: 500; }
-.ERROR { color: #ff3366; font-weight: 600; }
-.DEBUG { color: #66ffff; font-weight: 400; }
-.UNKNOWN { color: #999; font-weight: 400; }
+.INFO {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+.WARN {
+  color: #ffff66;
+  font-weight: 500;
+}
+.ERROR {
+  color: #ff3366;
+  font-weight: 600;
+}
+.DEBUG {
+  color: #66ffff;
+  font-weight: 400;
+}
+.UNKNOWN {
+  color: #999;
+  font-weight: 400;
+}
 
-.dark-mode { --bg-color: #120034; --text-color: #00ff99; --input-bg: rgba(40,40,40,0.6); --input-border:#00ff99; --log-bg: rgba(10,10,20,0.7); --accent-color:#00ff99; --highlight-color: rgba(0,255,153,0.3); --hover-color: rgba(0,255,153,0.2); --shadow-color: rgba(0,255,153,0.3);}
-.light-mode { --bg-color:#f0f0f5; --text-color:#111; --input-bg:rgba(255,255,255,0.7); --input-border:#111; --log-bg: rgba(255,255,255,0.5); --accent-color:#111; --highlight-color: rgba(0,0,0,0.2); --hover-color: rgba(0,0,0,0.1); --shadow-color: rgba(0,0,0,0.1);}
+.dark-mode {
+  --bg-color: #120034;
+  --text-color: #00ff99;
+  --input-bg: rgba(40, 40, 40, 0.6);
+  --input-border: #00ff99;
+  --log-bg: rgba(10, 10, 20, 0.7);
+  --accent-color: #00ff99;
+  --highlight-color: rgba(0, 255, 153, 0.3);
+  --hover-color: rgba(0, 255, 153, 0.2);
+  --shadow-color: rgba(0, 255, 153, 0.3);
+}
+.light-mode {
+  --bg-color: #f0f0f5;
+  --text-color: #111;
+  --input-bg: rgba(255, 255, 255, 0.7);
+  --input-border: #111;
+  --log-bg: rgba(255, 255, 255, 0.5);
+  --accent-color: #111;
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --hover-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
