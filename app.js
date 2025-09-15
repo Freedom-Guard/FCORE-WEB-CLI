@@ -86,8 +86,6 @@ const consumeLogs = async (url) => {
 sendBtn.addEventListener("click", () => {
   const path = pathInput.value || "/version";
   const args = argsInput.value ? "?" + argsInput.value : "";
-  logLines = [];
-  logBox.innerHTML = "";
   consumeLogs(`http://localhost:${currentPort}` + path + args);
 });
 
