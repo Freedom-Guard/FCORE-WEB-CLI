@@ -1,0 +1,158 @@
+:root {
+  --bg-color: #1a0b3d;
+  --text-color: #00ff99;
+  --input-bg: rgba(40, 40, 40, 0.6);
+  --input-border: #00ff99;
+  --log-bg: rgba(10, 10, 30, 0.7);
+  --accent-color: #00ff99;
+  --highlight-color: rgba(0, 255, 153, 0.3);
+  --hover-color: rgba(0, 255, 153, 0.2);
+  --shadow-color: rgba(0, 255, 153, 0.3);
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+header {
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--input-border);
+  box-shadow: 0 6px 20px var(--shadow-color);
+  border-radius: 0 0 16px 16px;
+}
+
+input,
+button,
+select {
+  padding: 8px 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-color);
+  font-family: monospace;
+  border-radius: 12px;
+  outline: none;
+  transition: all var(--transition-speed);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(0, 255, 153, 0.2);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 12px var(--accent-color);
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--hover-color);
+  box-shadow: 0 0 16px var(--accent-color);
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+#log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: var(--log-bg);
+  white-space: pre-wrap;
+  border-top: 1px solid var(--input-border);
+  border-radius: 16px;
+  margin: 10px;
+  box-shadow: inset 0 0 15px rgba(0, 255, 153, 0.3);
+  backdrop-filter: blur(10px);
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+.log-line {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.log-line .highlight {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.INFO {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+.WARN {
+  color: #ffff66;
+  font-weight: 500;
+}
+.ERROR {
+  color: #ff3366;
+  font-weight: 600;
+}
+.DEBUG {
+  color: #66ffff;
+  font-weight: 400;
+}
+.UNKNOWN {
+  color: #999;
+  font-weight: 400;
+}
+
+.dark-mode {
+  --bg-color: #120034;
+  --text-color: #00ff99;
+  --input-bg: rgba(40, 40, 40, 0.6);
+  --input-border: #00ff99;
+  --log-bg: rgba(10, 10, 20, 0.7);
+  --accent-color: #00ff99;
+  --highlight-color: rgba(0, 255, 153, 0.3);
+  --hover-color: rgba(0, 255, 153, 0.2);
+  --shadow-color: rgba(0, 255, 153, 0.3);
+}
+
+.light-mode {
+  --bg-color: #f0f0f5;
+  --text-color: #111;
+  --input-bg: rgba(255, 255, 255, 0.7);
+  --input-border: #111;
+  --log-bg: rgba(255, 255, 255, 0.5);
+  --accent-color: #111;
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --hover-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
